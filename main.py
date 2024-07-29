@@ -4,7 +4,6 @@ import plotly.express as px
 from Data_Handlers.daily_handler import daily_handler
 from Data_Handlers.monthly_handler import monthly_handler
 from Data_Handlers.file_type_handler import file_type_handler
-from Streamlit_Components.side_bar import side_bar
 
 def main():
     # Page Config
