@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import plotly.express as px
-from Data_Handlers.daily_handler import daily_handler
-from Data_Handlers.monthly_handler import monthly_handler
-from Data_Handlers.file_type_handler import file_type_handler
+
+from Helper_Functions.process_uploaded_files import process_uploaded_files
+from Helper_Functions.display_dataframes import display_dataframes
 
 def main():
     # Page Config
@@ -16,24 +17,12 @@ def main():
     uploaded_files = st.file_uploader("Upload", type="xlsx", accept_multiple_files=True)
 
     if uploaded_files:
-        dfs=[]
-        for uploaded_file in uploaded_files:
-            filename = uploaded_file.name
-            file_type = file_type_handler(filename)
-            if file_type == "type_1":
-                df = daily_handler(uploaded_file)
-            elif file_type == "type_2":
-                df = monthly_handler(uploaded_file)
-            else:
-                st.error(file_type)
-                continue
-            st.write(f"Processed data for file: {filename}")
-            st.dataframe(df)
-            dfs.append(df)
+        df_1, df_2, df_3 = process_uploaded_files(uploaded_files)
+        display_dataframes(df_1, df_2, df_3)
+
+        
     
     
-
-
 
 if __name__ == "__main__":
     main()
