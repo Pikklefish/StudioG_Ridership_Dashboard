@@ -23,7 +23,7 @@ def process_uploaded_files(uploaded_files):
 
         elif file_type == "type_2":
             df_2 = convert_to_nan(monthly_handler(uploaded_file))
-            df2s.append(df_2)
+            # df2s.append(df_2)
         elif file_type == "type_3":
             df_3 = convert_to_nan(status_handler(uploaded_file))
         else:
@@ -31,7 +31,7 @@ def process_uploaded_files(uploaded_files):
             st.error(file_type + e)
             continue
     
-    if df2s:
-        df_2 = pd.concat(df2s, ignore_index=True)
+    # if df2s:
+    #     df_2 = pd.concat(df2s, ignore_index=True)
 
     return df_1, df_2, df_3

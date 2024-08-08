@@ -8,6 +8,5 @@ def daily_handler(file):
         engine='openpyxl',
         sheet_name='전체',
         skiprows=0,
-        usecols='A:AK',
     )
     return df
