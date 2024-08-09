@@ -14,7 +14,6 @@ def service_area_count(df_3):
         return int_total_count
 
     except Exception as e:
-        
         return st.error(f"Error calculating service area in service_area_count.py: {e}")
     
     

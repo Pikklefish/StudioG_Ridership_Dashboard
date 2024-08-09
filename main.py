@@ -23,13 +23,13 @@ def main():
         df_daily, df_monthly, df_operation = process_uploaded_files(uploaded_files)
         display_dataframes(df_daily, df_monthly, df_operation)
           
-        # if df_operation is not None:
-        #     service_area= int(service_area_count(df_operation)) 
-        #     st.write("운행지역: ", service_area)
-        #     community= int(community_count(df_operation)) 
-        #     st.write("The community value is: ", community)
-        #     verhicle_count = operational_vehicles_count(df_operation)
-        #     st.write("The number of culumulative vehicles is:",  verhicle_count)
+        if df_operation is not None:
+            service_area= int(service_area_count(df_operation)) 
+            st.write("운행지역: ", service_area)
+            community= int(community_count(df_operation)) 
+            st.write("The community value is: ", community)
+            verhicle_count = operational_vehicles_count(df_operation)
+            st.write("The number of culumulative vehicles is:",  verhicle_count)
         
 
         
