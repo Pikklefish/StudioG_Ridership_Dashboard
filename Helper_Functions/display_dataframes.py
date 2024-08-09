@@ -1,7 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import plotly.express as px
 
 def display_dataframes(df_1, df_2, df_3):
     """Display the dataframes in the Streamlit app."""

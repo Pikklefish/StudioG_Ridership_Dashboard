@@ -1,7 +1,4 @@
-import streamlit as st
 import pandas as pd
-import numpy as np
-import plotly.express as px
 
 def community_count(df_3):
     int_total_count = 0

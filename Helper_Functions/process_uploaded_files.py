@@ -1,6 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 
 from Data_Handlers.daily_handler import daily_handler
 from Data_Handlers.monthly_handler import monthly_handler

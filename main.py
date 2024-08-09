@@ -8,6 +8,7 @@ from Helper_Functions.display_dataframes import display_dataframes
 from Operational_Status.service_area_count import service_area_count
 from Operational_Status.community_count import community_count
 from Operational_Status.operational_vehicles_count import operational_vehicles_count
+from Operational_Status.total_riders_count import total_riders_count
 
 def main():
     # Page Config
@@ -30,6 +31,10 @@ def main():
             st.write("The community value is: ", community)
             verhicle_count = operational_vehicles_count(df_operation)
             st.write("The number of culumulative vehicles is:",  verhicle_count)
+
+        if df_monthly is not None:
+            total_rider_count = total_riders_count(df_monthly)
+            st.write("The number of culmulative riders is:", total_rider_count)
         
 
         

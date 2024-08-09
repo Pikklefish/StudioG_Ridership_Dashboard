@@ -1,6 +1,4 @@
 import pandas as pd
-import plotly.express as px
-
 
 def daily_handler(file):
     df = pd.read_excel(
