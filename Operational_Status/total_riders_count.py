@@ -8,3 +8,4 @@ def total_riders_count(df_2):
         
     except Exception as e:
         return st.error(f"Error calculating total riders in total_riders_count.py: {e}")
+      
