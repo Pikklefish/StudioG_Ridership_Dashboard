@@ -5,6 +5,5 @@ def daily_handler(file):
         io=file,
         engine='openpyxl',
         sheet_name='전체',
-        skiprows=0,
     )
     return df

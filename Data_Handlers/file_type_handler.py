@@ -2,7 +2,7 @@
 
 def file_type_handler(filename):
     
-    if "통합_DRT 일별" in filename:
+    if "일별" in filename:
         return "type_1"
     
     elif "월별" in filename:
