@@ -7,6 +7,7 @@ from datetime import datetime
 
 from Helper_Functions.process_uploaded_files import process_uploaded_files
 from Helper_Functions.display_dataframes import display_dataframes
+
 from Operational_Status.service_area_count import service_area_count
 from Operational_Status.community_count import community_count
 from Operational_Status.operational_vehicles_count import operational_vehicles_count
@@ -14,6 +15,8 @@ from Operational_Status.total_riders_count import total_riders_count
 from Operational_Status.total_calls_count import total_calls_count
 from Operational_Status.total_distance_count import total_distance_count
 from Operational_Status.daily_rider_count import daily_rider_count
+from Operational_Status.daily_calls_count import daily_calls_count
+from Operational_Status.daily_distance_travelled import daily_distance_travelled
 
 def main():
     # Page Config
@@ -49,7 +52,10 @@ def main():
             date_time_obj = pd.to_datetime("2024-07-30", format="%Y-%m-%d") #eliminate this line for production
             daily_rider = daily_rider_count(df_daily, date_time_obj) # swtich to datetime.now() for production
             st.write("The number of daily riders is:", daily_rider)
-
+            daily_call = daily_calls_count(df_daily, date_time_obj)
+            st.write("The number of daily calls is:", daily_call)
+            daily_distance = daily_distance_travelled(df_daily, date_time_obj)
+            st.write("The distance travelled is:", daily_distance)
 
         
     
