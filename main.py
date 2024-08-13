@@ -18,6 +18,9 @@ from Operational_Status.daily_rider_count import daily_rider_count
 from Operational_Status.daily_calls_count import daily_calls_count
 from Operational_Status.daily_distance_travelled import daily_distance_travelled
 
+from Detailed_Operational_Status.operational_cars_details import operational_cars_details
+
+
 def main():
     # Page Config
     st.set_page_config(page_title="바로 Dashboard",
@@ -39,6 +42,8 @@ def main():
             st.write("The community value is: ", community)
             verhicle_count = operational_vehicles_count(df_operation)
             st.write("The number of culumulative vehicles is:",  verhicle_count)
+            vehicles_detail = operational_cars_details(df_operation)
+            st.dataframe(vehicles_detail)
 
         if df_monthly is not None:
             total_rider_count = total_riders_count(df_monthly)
