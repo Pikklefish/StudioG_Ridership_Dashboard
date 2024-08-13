@@ -20,6 +20,7 @@ from Operational_Status.daily_distance_travelled import daily_distance_travelled
 
 from Detailed_Operational_Status.operational_cars_details import operational_cars_details
 
+from Monthly_Usage_Status.monthly_usage_status import monthly_usage_status
 
 def main():
     # Page Config
@@ -52,6 +53,8 @@ def main():
             st.write("The number of culmulative callers is:", total_call_count)
             total_distance = total_distance_count(df_monthly)
             st.write("The number of culmulative distance travelled is:", total_distance)
+            monthly_users = monthly_usage_status(df_monthly)
+            st.dataframe(monthly_users)
         
         if df_daily is not None:
             date_time_obj = pd.to_datetime("2024-07-30", format="%Y-%m-%d") #eliminate this line for production
